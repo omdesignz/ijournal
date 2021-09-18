@@ -2,12 +2,12 @@
 
 namespace App\Listeners\Illuminate\Auth\Listeners;
 
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\WelcomeEMail;
 use App\Models\User;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendWelcomeNotification
 {
