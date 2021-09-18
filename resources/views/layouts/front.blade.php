@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('page_title')</title>
 
         <!-- Fonts -->
         <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> -->
@@ -53,7 +53,7 @@
           <a href="/submissions" class="text-base font-medium text-gray-500 hover:text-gray-900">
             Submissions
           </a>
-          <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          <a href="/announce" class="text-base font-medium text-gray-500 hover:text-gray-900">
             Announcements
           </a>
           <a href="/contact" class="text-base font-medium text-gray-500 hover:text-gray-900">
@@ -213,36 +213,46 @@
               </h3>
               <ul class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
+                  <a href="/authorinfo" class="text-base text-gray-300 hover:text-isptec">
                     Author
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
+                  <a href="readerinfo" class="text-base text-gray-300 hover:text-isptec">
                     Reader
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
+                  <a href="/librarianinfo" class="text-base text-gray-300 hover:text-isptec">
                     Librarians
+                  </a>
+                </li>
+                <li>
+                  <a href="/subformat" class="text-base text-gray-300 hover:text-isptec">
+                    Submission & Formating
                   </a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="md:grid md:grid-cols-2 md:gap-8">
-            <!-- <div>
-              <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Company
+            <div>
+              <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
+                About
               </h3>
               <ul class="mt-4 space-y-4">
-                <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
-                    #
+              <li>
+                  <a href="/forauthors" class="text-base text-gray-300 hover:text-isptec">
+                    For Authors
+                  </a>
+                </li>
+              <li>
+                  <a href="/subformat" class="text-base text-gray-300 hover:text-isptec">
+                    Submission & Formating
                   </a>
                 </li>
               </ul>
-            </div> -->
+            </div>
             <div class="mt-12 md:mt-0">
               <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
                 Legal
@@ -255,16 +265,11 @@
                 </li>
 
                 <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
-                    Copyright
+                  <a href="/policy" class="text-base text-gray-300 hover:text-isptec">
+                    Copyright & Access
                   </a>
                 </li>
 
-                <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
-                    Access
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
@@ -312,7 +317,7 @@
 
         </div>
         <p class="mt-8 text-base text-gray-300 md:mt-0 md:order-1">
-          &copy; 2020 iJournal - Infinity Journal. All rights reserved.
+          &copy; {{ now()->format('Y') }} iJournal - Infinity Journal. All rights reserved.
         </p>
       </div>
     </div>

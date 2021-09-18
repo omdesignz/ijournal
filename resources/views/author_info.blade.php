@@ -111,7 +111,7 @@
           </defs>
           <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
         </svg>
-        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('infinity_dark.png') }}" alt="">
+        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('author.jpeg') }}" alt="">
       </div>
     </div>
 
@@ -248,7 +248,7 @@ Authors should ensure that writing is free from bias, for instance by using 'he 
             </defs>
             <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
           </svg>
-          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('journal_cover.jpeg') }}" alt="">
+          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('author2.jpeg') }}" alt="">
         </div>
       </div>
     </div>

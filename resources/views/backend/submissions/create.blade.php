@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('page_title')
+  Submissions
+@endsection
+
 @section('title')
 <div class="md:flex md:items-center md:justify-between">
   <div class="flex-1 min-w-0">
@@ -16,6 +20,51 @@
 @endsection
 
 @section('content')
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-white shadow sm:rounded-lg">
+  <div class="px-4 py-5 sm:p-6">
+    <div class="sm:flex sm:items-start sm:justify-between">
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Submission & Formatting
+        </h3>
+        <div class="mt-2 max-w-xl text-sm text-gray-500">
+          <p>
+            Before submitting an article please ensure that you're aquainted with our formatting rules.
+          </p>
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+        <a href="/subformat" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
+          Formatting
+</a>
+      </div>
+    </div>
+  </div>
+</div> <br>
+
+<div class="bg-white shadow sm:rounded-lg">
+  <div class="px-4 py-5 sm:p-6">
+    <div class="sm:flex sm:items-start sm:justify-between">
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Author Guidelines
+        </h3>
+        <div class="mt-2 max-w-xl text-sm text-gray-500">
+          <p>
+            Before submitting an article please ensure that you're aquainted with our author guidelines.
+          </p>
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+        <a href="/forauthors" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
+          Guidelines
+</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <form method="post" action="{{ url('submissions') }}" class="space-y-8 divide-y divide-gray-200" enctype="multipart/form-data">
     @csrf
   <div class="space-y-8 divide-y divide-gray-200">

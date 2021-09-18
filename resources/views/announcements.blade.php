@@ -16,9 +16,10 @@
       </p>
     </div>
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    @forelse ($announcements as $announcement)
+    <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
         <div class="flex-shrink-0">
-          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">
+          <img class="h-48 w-full object-cover" src="{{ $announcement->cover }}" alt="">
         </div>
         <div class="flex-1 bg-white p-6 flex flex-col justify-between">
           <div class="flex-1">
@@ -27,124 +28,65 @@
                 
               </a>
             </p>
-            <a href="#" class="block mt-2">
+            <a href="/announce/{{ $announcement->id }}" class="block mt-2">
               <p class="text-xl font-semibold text-gray-900">
-                Boost your conversion rate
+                {{ $announcement->title }}
               </p>
               <p class="mt-3 text-base text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.
+                {{ Str::limit($announcement->description, 60) }}
               </p>
             </a>
           </div>
           <div class="mt-6 flex items-center">
             <div class="flex-shrink-0">
               <a href="#">
-                <span class="sr-only">Roel Aufderehar</span>
-                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                <span class="sr-only">{{ $announcement->user->first_name }} {{ $announcement->user->last_name }}</span>
+                <img class="h-10 w-10 rounded-full" src="{{ $announcement->user->avatar }}" alt="">
               </a>
             </div>
             <div class="ml-3">
               <p class="text-sm font-medium text-gray-900">
                 <a href="#" class="hover:underline">
-                  Roel Aufderehar
+                {{ $announcement->user->first_name }} {{ $announcement->user->last_name }}
                 </a>
               </p>
               <div class="flex space-x-1 text-sm text-gray-500">
                 <time datetime="2020-03-16">
-                  Mar 16, 2020
+                  {{ $announcement->published_at }}
                 </time>
               </div>
             </div>
           </div>
         </div>
       </div>
+    @empty
+    
+    <!-- This example requires Tailwind CSS v2.0+ -->
+<div class="text-center">
+  <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+    <path vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+  </svg>
+  <h3 class="mt-2 text-sm font-medium text-gray-900">No announcements found!</h3>
+  <p class="mt-1 text-sm text-gray-500">
+    Get started by submitting one today.
+  </p>
+  <div class="mt-6">
+    <a href="/announcements/create" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec">
+      <!-- Heroicon name: solid/plus -->
+      <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+      </svg>
+      Submit
+</a>
+  </div>
+</div>
 
-      <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-        <div class="flex-shrink-0">
-          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">
-        </div>
-        <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-          <div class="flex-1">
-            <p class="text-sm font-medium text-indigo-600">
-              <a href="#" class="hover:underline">
-                
-              </a>
-            </p>
-            <a href="#" class="block mt-2">
-              <p class="text-xl font-semibold text-gray-900">
-                How to use search engine optimization to drive sales
-              </p>
-              <p class="mt-3 text-base text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.
-              </p>
-            </a>
-          </div>
-          <div class="mt-6 flex items-center">
-            <div class="flex-shrink-0">
-              <a href="#">
-                <span class="sr-only">Brenna Goyette</span>
-                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-              </a>
-            </div>
-            <div class="ml-3">
-              <p class="text-sm font-medium text-gray-900">
-                <a href="#" class="hover:underline">
-                  Brenna Goyette
-                </a>
-              </p>
-              <div class="flex space-x-1 text-sm text-gray-500">
-                <time datetime="2020-03-10">
-                  Mar 10, 2020
-                </time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-        <div class="flex-shrink-0">
-          <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">
-        </div>
-        <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-          <div class="flex-1">
-            <p class="text-sm font-medium text-indigo-600">
-              <a href="#" class="hover:underline">
-                
-              </a>
-            </p>
-            <a href="#" class="block mt-2">
-              <p class="text-xl font-semibold text-gray-900">
-                Improve your customer experience
-              </p>
-              <p class="mt-3 text-base text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.
-              </p>
-            </a>
-          </div>
-          <div class="mt-6 flex items-center">
-            <div class="flex-shrink-0">
-              <a href="#">
-                <span class="sr-only">Daniela Metz</span>
-                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-              </a>
-            </div>
-            <div class="ml-3">
-              <p class="text-sm font-medium text-gray-900">
-                <a href="#" class="hover:underline">
-                  Daniela Metz
-                </a>
-              </p>
-              <div class="flex space-x-1 text-sm text-gray-500">
-                <time datetime="2020-02-12">
-                  Feb 12, 2020
-                </time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+@endforelse
+      
+    
+    </div> <br>
+    {{ $announcements->links() }}
   </div>
 </div>
 

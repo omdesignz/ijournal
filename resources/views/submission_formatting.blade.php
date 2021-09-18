@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{ asset('journal_cover.jpeg') }}" alt="">
+    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{ asset('subformat.jpeg') }}" alt="">
   </div>
 </div>
 
@@ -201,7 +201,7 @@
           </defs>
           <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
         </svg>
-        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('infinity_dark.png') }}" alt="">
+        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('submission.jpeg') }}" alt="">
       </div>
     </div>
 
@@ -328,7 +328,7 @@
             </defs>
             <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
           </svg>
-          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('journal_cover.jpeg') }}" alt="">
+          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('subformat2.jpeg') }}" alt="">
         </div>
       </div>
     </div>
@@ -378,7 +378,7 @@
           </defs>
           <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
         </svg>
-        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('infinity_dark.png') }}" alt="">
+        <img class="relative mx-auto rounded-3xl" width="490" src="{{ asset('subformat4.jpeg') }}" alt="">
       </div>
     </div>
 
@@ -502,7 +502,7 @@
             </defs>
             <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
           </svg>
-          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('journal_cover.jpeg') }}" alt="">
+          <img class="relative mx-auto rounded-full" width="490" src="{{ asset('subformat3.jpeg') }}" alt="">
         </div>
       </div>
     </div>

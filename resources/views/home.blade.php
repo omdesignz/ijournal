@@ -129,40 +129,6 @@
       <div class="swiper-button-prev"></div>
     </div>
 
-    <!-- Journal Highlight -->
-    <!-- <div class="bg-white pt-16 lg:py-24">
-        <div class="pb-16 bg-indigo-600 lg:pb-0 lg:z-10 lg:relative">
-            <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
-            <div class="relative lg:-my-8">
-                <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
-                <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
-                <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                    <img class="object-cover lg:h-full lg:w-full" src="/infinity_cover.png" alt="">
-                </div>
-                </div>
-            </div>
-            <div class="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
-                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
-                <blockquote>
-                    <div>
-                    <svg class="h-12 w-12 text-white opacity-25" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                    </svg>
-                    <p class="mt-6 text-2xl font-medium text-white">
-                    Existem muitas hipóteses em ciência que estão erradas. Isso é perfeitamente aceitável, eles são a abertura para achar as que estão certas.
-                    </p>
-                    </div>
-                    <footer class="mt-6">
-                    <p class="text-base font-medium text-white">Artur Miguel</p>
-                    <p class="text-base font-medium text-indigo-100">Director Científico</p>
-                    </footer>
-                </blockquote>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div> -->
-
     <div class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
             <div>
@@ -173,94 +139,32 @@
                 <p class="text-xl text-gray-500">
                 Get our articles in your inbox.
                 </p>
-                <form class="mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end">
-                <div>
-                    <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email-address" type="email" autocomplete="email" required class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 lg:max-w-xs" placeholder="Enter your email">
-                </div>
-                <div class="mt-2 flex-shrink-0 w-full flex rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:w-auto sm:inline-flex">
-                    <button type="button" class="w-full bg-gray-300 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-isptec sm:w-auto sm:inline-flex">
-                    Notify me
-                    </button>
-                </div>
-                </form>
             </div>
             </div>
             <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-            <div>
-                <p class="text-sm text-gray-500">
-                <time datetime="2020-03-16">Mar 16, 2020</time>
-                </p>
-                <a href="#" class="mt-2 block">
-                <p class="text-xl font-semibold text-gray-900">
-                    Boost your conversion rate
-                </p>
-                <p class="mt-3 text-base text-gray-500">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.
-                </p>
-                </a>
-                <div class="mt-3">
-                <a href="#" class="text-base font-semibold text-indigo-600 hover:text-indigo-500">
-                    Read full article
-                </a>
-                </div>
+            @forelse ($articles as $article)
+              <div>
+                  <p class="text-sm text-gray-500">
+                  <time datetime="2020-03-16">{{ $article->published_at }}</time>
+                  </p>
+                  <a href="#" class="mt-2 block">
+                  <p class="text-xl font-semibold text-gray-900">
+                      {{ $article->title }}
+                  </p>
+                  <p class="mt-3 text-base text-gray-500">
+                  {{ Str::limit($article->abstract, 60) }}
+                  </p>
+                  </a>
+                  <div class="mt-3">
+                  <a href="/articles/{{ $article->id }}" class="text-base font-semibold text-gray-600 hover:text-isptec">
+                      Read full article
+                  </a>
+              </div>
             </div>
+            @empty
+              No Articles Found!
+            @endforelse
 
-            <div>
-                <p class="text-sm text-gray-500">
-                <time datetime="2020-03-10">Mar 10, 2020</time>
-                </p>
-                <a href="#" class="mt-2 block">
-                <p class="text-xl font-semibold text-gray-900">
-                    How to use search engine optimization to drive sales
-                </p>
-                <p class="mt-3 text-base text-gray-500">
-                    Optio cum necessitatibus dolor voluptatum provident commodi et. Qui aperiam fugiat nemo cumque.
-                </p>
-                </a>
-                <div class="mt-3">
-                <a href="#" class="text-base font-semibold text-indigo-600 hover:text-indigo-500">
-                    Read full article
-                </a>
-                </div>
-            </div>
-
-            <div>
-                <p class="text-sm text-gray-500">
-                <time datetime="2020-02-12">Feb 12, 2020</time>
-                </p>
-                <a href="#" class="mt-2 block">
-                <p class="text-xl font-semibold text-gray-900">
-                    Improve your customer experience
-                </p>
-                <p class="mt-3 text-base text-gray-500">
-                    Cupiditate maiores ullam eveniet adipisci in doloribus nulla minus. Voluptas iusto libero adipisci rem et corporis.
-                </p>
-                </a>
-                <div class="mt-3">
-                <a href="#" class="text-base font-semibold text-indigo-600 hover:text-indigo-500">
-                    Read full article
-                </a>
-                </div>
-            </div>
-
-            <div>
-                <p class="text-sm text-gray-500">
-                <time datetime="2020-01-29">Jan 29, 2020</time>
-                </p>
-                <a href="#" class="mt-2 block">
-                <p class="text-xl font-semibold text-gray-900">
-                    Writing effective landing page copy
-                </p>
-                <p class="mt-3 text-base text-gray-500">
-                    Ipsum voluptates quia doloremque culpa qui eius. Id qui id officia molestias quaerat deleniti. Qui facere numquam autem libero quae cupiditate asperiores vitae cupiditate. Cumque id deleniti explicabo.
-                </p>
-                </a>
-                <div class="mt-3">
-                <a href="#" class="text-base font-semibold text-indigo-600 hover:text-indigo-500">
-                    Read full article
-                </a>
-                </div>
             </div>
             </div>
         </div>

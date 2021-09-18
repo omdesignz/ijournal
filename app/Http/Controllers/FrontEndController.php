@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\AnnouncementController;
+use App\Models\Article;
+use App\Models\Announcement;
 
 class FrontEndController extends Controller
 {
@@ -15,12 +15,23 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $articles = Article::with('user', 'journal')->where('status', 1)->latest()->take(4)->get();
+
+        return view('home', compact('articles'));
     }
 
     public function articles()
     {
-        return view('articles');
+        $articles = Article::with('user', 'journal')->where('status', 1)->paginate(10);
+
+        return view('articles', compact('articles'));
+    }
+
+    public function article($id)
+    {
+        $article = Article::with('user', 'journal')->findOrFail($id);
+
+        return view('article', compact('article'));
     }
 
     public function contact()
@@ -48,6 +59,16 @@ class FrontEndController extends Controller
         return view('author_info');
     }
 
+    public function readerinfo()
+    {
+        return view('reader_info');
+    }
+
+    public function librarianinfo()
+    {
+        return view('librarian_info');
+    }
+
     public function forauthors()
     {
         return view('for_authors');
@@ -60,7 +81,16 @@ class FrontEndController extends Controller
 
     public function announcements()
     {
-        return view('announcements');
+        $announcements = Announcement::with('user')->paginate(10);
+
+        return view('announcements', compact('announcements'));
+    }
+
+    public function announcement($id)
+    {
+        $announcement = Announcement::with('user')->findOrFail($id);
+
+        return view('announcement', compact('announcement'));
     }
 
     /**

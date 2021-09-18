@@ -27,19 +27,21 @@ Route::get('/about', [FrontEndController::class, 'about']);
 // Route::get('/submissions', [FrontEndController::class, 'submissions']);
 Route::get('/policy', [FrontEndController::class, 'policy']);
 Route::get('/authorinfo', [FrontEndController::class, 'authorinfo']);
+Route::get('/readerinfo', [FrontEndController::class, 'readerinfo']);
+Route::get('/librarianinfo', [FrontEndController::class, 'librarianinfo']);
 Route::get('/forauthors', [FrontEndController::class, 'forauthors']);
 Route::get('/subformat', [FrontEndController::class, 'subformat']);
-Route::get('/announcements', [FrontEndController::class, 'announcements']);
+Route::get('/announce', [FrontEndController::class, 'announcements']);
+Route::get('/announce/{id}', [FrontEndController::class, 'announcement']);
 Route::get('/articles', [FrontEndController::class, 'articles']);
+Route::get('/articles/{id}', [FrontEndController::class, 'article']);
 
 Route::post('/media', [MediaController::class, 'store'])->name('media.store');
 
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [FrontEndController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
