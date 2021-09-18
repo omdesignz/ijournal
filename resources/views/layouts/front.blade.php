@@ -134,7 +134,7 @@
                   </div>
                 </a>
 
-                <a href="/announcements" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+                <a href="/announce" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
                   
                   <div class="ml-4 text-base font-medium text-gray-900">
                     Announcements
