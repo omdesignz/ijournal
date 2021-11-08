@@ -12,7 +12,7 @@
     </h2>
   </div>
   <div class="mt-4 flex md:mt-0 md:ml-4">
-    <a href="/submissions" class="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec">
+    <a href="/submissions" class="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec">
       Return to Submission Listing
     </a>
   </div>
@@ -21,27 +21,6 @@
 
 @section('content')
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="bg-white shadow sm:rounded-lg">
-  <div class="px-4 py-5 sm:p-6">
-    <div class="sm:flex sm:items-start sm:justify-between">
-      <div>
-        <h3 class="text-lg leading-6 font-medium text-gray-900">
-          Submission & Formatting
-        </h3>
-        <div class="mt-2 max-w-xl text-sm text-gray-500">
-          <p>
-            Before submitting an article please ensure that you're aquainted with our formatting rules.
-          </p>
-        </div>
-      </div>
-      <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-        <a href="/subformat" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
-          Formatting
-</a>
-      </div>
-    </div>
-  </div>
-</div> <br>
 
 <div class="bg-white shadow sm:rounded-lg">
   <div class="px-4 py-5 sm:p-6">
@@ -57,8 +36,30 @@
         </div>
       </div>
       <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
-        <a href="/forauthors" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
+        <a href="/forauthors" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-900 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
           Guidelines
+</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="bg-white shadow sm:rounded-lg">
+  <div class="px-4 py-5 sm:p-6">
+    <div class="sm:flex sm:items-start sm:justify-between">
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Submission & Formatting
+        </h3>
+        <div class="mt-2 max-w-xl text-sm text-gray-500">
+          <p>
+            Before submitting an article please ensure that you're aquainted with our formatting rules.
+          </p>
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
+        <a href="/subformat" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-full text-white bg-gray-900 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec sm:text-sm" target="_blank">
+          Formatting
 </a>
       </div>
     </div>
@@ -87,10 +88,15 @@
           <label for="abstract" class="block text-sm font-medium text-gray-700">
             Abstract
           </label>
-          <div class="mt-1">
-            <textarea id="abstract" name="abstract" rows="3" class="shadow-sm focus:ring-isptec focus:border-isptec block w-full sm:text-sm border border-gray-300 rounded-md"> {{ old('abstract') }}</textarea>
+          <div class="mt-1" x-data="{content: '', limit: $refs.abstract.maxLength}">
+            <textarea x-model="content" x-ref="abstract" maxlength="280" id="abstract" name="abstract" rows="3" class="shadow-sm focus:ring-isptec focus:border-isptec block w-full sm:text-sm border border-gray-300 rounded-md"> {{ old('abstract') }}</textarea>
+          <p" class="mt-2 text-sm text-gray-500">
+              You have 
+          <span x-text="limit - content.length"></span>
+          characters remaining
+          </p>
+
           </div>
-          <p class="mt-2 text-sm text-gray-500">Write a few sentences about your article.</p>
           @if($errors->has('abstract'))
           <p class="mt-2 text-sm text-red-500">{{ $errors->first('abstract') }}</p>
           @endif
@@ -133,7 +139,7 @@
           @endif
         </div>
 
-        <div class="sm:col-span-3">
+        <!-- <div class="sm:col-span-3">
           <label for="link" class="block text-sm font-medium text-gray-700">
             Link
           </label>
@@ -155,9 +161,9 @@
           @if($errors->has('published_at'))
           <p class="mt-2 text-sm text-red-500">{{ $errors->first('published_at') }}</p>
           @endif
-        </div>
+        </div> -->
 
-        <div class="sm:col-span-6">
+        <!-- <div class="sm:col-span-6">
           <label for="cite_instructions" class="block text-sm font-medium text-gray-700">
             Cite Instructions
           </label>
@@ -168,31 +174,36 @@
           @if($errors->has('cite_instructions'))
           <p class="mt-2 text-sm text-red-500">{{ $errors->first('cite_instructions') }}</p>
           @endif
-        </div>
+        </div> -->
 
         <div class="sm:col-span-6">
           <label for="filtered_paper" class="block text-sm font-medium text-gray-700">
-            Article (Filtered)
+            Article (excluding authors)
           </label>
           <div class="mt-1">
             <input value="{{ old('filtered_paper') }}" id="filtered_paper" name="filtered_paper" type="file" class="">
           </div>
-          <p class="mt-2 text-sm text-gray-500">Article in PDF format (excluding authors)</p>
           @if($errors->has('filtered_paper'))
           <p class="mt-2 text-sm text-red-500">{{ $errors->first('filtered_paper') }}</p>
+          @else
+          <p class="mt-2 text-sm text-gray-500">- File must be in PDF format</p>
+          <p class="mt-2 text-sm text-gray-500">- File size should not exceed 5MB</p>
           @endif
         </div>
 
         <div class="sm:col-span-6">
           <label for="full_paper" class="block text-sm font-medium text-gray-700">
-            Article (Full)
+            Article (including authors)
           </label>
           <div class="mt-1">
             <input value="{{ old('full_paper') }}" id="full_paper" name="full_paper" type="file" class="">
           </div>
-          <p class="mt-2 text-sm text-gray-500">Complete article in PDF format (including authors)</p>
+          
           @if($errors->has('full_paper'))
           <p class="mt-2 text-sm text-red-500">{{ $errors->first('full_paper') }}</p>
+          @else
+          <p class="mt-2 text-sm text-gray-500">- File must be in PDF format</p>
+          <p class="mt-2 text-sm text-gray-500">- File size should not exceed 5MB</p>
           @endif
         </div>
 
@@ -222,9 +233,9 @@
               </div>
               <div class="ml-3 text-sm">
                 <label for="agree_terms" class="font-medium text-gray-700">Terms and Conditions</label>
-                <p class="text-gray-500">Tick this box if you agree to our terms and conditions.</p>
+                <p class="text-gray-500">Tick this box if you agree to our <a class="text-isptec" href="/terms-conditions" target="_blank">terms and conditions.</a> </p>
                 @if($errors->has('agree_terms'))
-                <p class="mt-2 text-sm text-red-500">{{ $errors->first('agree_terms') }}</p>
+                <p class="mt-2 text-sm text-red-500">{{ $errors->first('agree_terms') }}</p> 
                 @endif
               </div>
             </div>
@@ -234,7 +245,7 @@
               </div>
               <div class="ml-3 text-sm">
                 <label for="agree_privacy_policy" class="font-medium text-gray-700">Privacy Policy</label>
-                <p class="text-gray-500">Tick this box if you agree to our privacy policy.</p>
+                <p class="text-gray-500">Tick this box if you agree to our <a class="text-isptec" href="/privacy" target="_blank">privacy policy</a>.</p>
                 @if($errors->has('agree_privacy_policy'))
                 <p class="mt-2 text-sm text-red-500">{{ $errors->first('agree_privacy_policy') }}</p>
                 @endif

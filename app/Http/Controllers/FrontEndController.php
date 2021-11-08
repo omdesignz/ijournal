@@ -79,6 +79,21 @@ class FrontEndController extends Controller
         return view('submission_formatting');
     }
 
+    public function eboard()
+    {
+        return view('eboard');
+    }
+
+    public function privacy()
+    {
+        return view('privacy');
+    }
+
+    public function terms_conditions()
+    {
+        return view('terms_conditions');
+    }
+
     public function announcements()
     {
         $announcements = Announcement::with('user')->paginate(10);

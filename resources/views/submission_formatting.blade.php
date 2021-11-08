@@ -172,18 +172,6 @@
               <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
               Biegler, L.T. and Hugles, R.R.; Approximation Programming of Chemical Processes, Part 4: Application of Powell's Algorithm. 73rd Annual Meeting AIChE. Chicago (1980)
               </dd>
-            </div>
-
-            <div class="relative">
-              <dt>
-                <div class="absolute flex items-center justify-center h-12 w-12 rounded-full bg-isptec text-white">
-                  <!-- Heroicon name: outline/mail -->
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900"></p>
-              </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
               Boole and Babbage, Problem Program Evaluator User Guide. Sunnyvale, California (1977)
               </dd>

@@ -65,7 +65,7 @@
                 <p class="ml-16 text-lg leading-6 font-medium text-gray-900"></p>
               </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
-              Electronic submission of manuscripts is mandatory and should be submitted by using the LINK
+              Electronic submission of manuscripts is mandatory and should be submitted by using the this <a class="text-isptec" href="/submissions/create" target="_blank">LINK</a>
               </dd>
             </div>
 

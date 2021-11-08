@@ -65,13 +65,13 @@
           <a href="/login" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
             Login
           </a>
-          <a href="/register" class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-yellow-200 to-isptec bg-origin-border px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white hover:from-gray-700 hover:to-isptec-grey">
+          <a href="/register" class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gray-900 px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white hover:bg-isptec">
             Register
           </a>
           @endguest
 
           @auth
-          <a href="/dashboard" class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gradient-to-r from-yellow-200 to-isptec bg-origin-border px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white hover:from-gray-700 hover:to-isptec-grey">
+          <a href="/dashboard" class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-gray-900 px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white hover:bg-isptec">
             Dashboard
           </a>
           @endauth
@@ -212,6 +212,16 @@
                 Information
               </h3>
               <ul class="mt-4 space-y-4">
+              <li>
+                  <a href="/about" class="text-base text-gray-300 hover:text-isptec">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/editorial-board" class="text-base text-gray-300 hover:text-isptec">
+                    Editorial Board
+                  </a>
+                </li>
                 <li>
                   <a href="/authorinfo" class="text-base text-gray-300 hover:text-isptec">
                     Author
@@ -259,7 +269,7 @@
               </h3>
               <ul class="mt-4 space-y-4">
                 <li>
-                  <a href="#" class="text-base text-gray-300 hover:text-isptec">
+                  <a href="/privacy" class="text-base text-gray-300 hover:text-isptec">
                     Privacy
                   </a>
                 </li>

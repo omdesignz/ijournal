@@ -59,7 +59,7 @@
                 </div>
                 <div class="space-y-1">
                   <label for="username" class="font-medium">{{ __('Username') }}</label>
-                  <input value="{{ old('username') }}" class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" type="text" id="username" name="username" placeholder="Enter your last name" />
+                  <input value="{{ old('username') }}" class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" type="text" id="username" name="username" placeholder="Enter your username" />
                   @if($errors->has('username'))
                     <p class="mt-2 text-sm text-red-500">{{ $errors->first('username') }}</p>
                     @endif
@@ -73,7 +73,7 @@
                 </div>
                 <div class="space-y-1">
                   <label for="tel_no" class="font-medium">{{ __('Tel No') }}</label>
-                  <input value="{{ old('tel_no') }}" class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" type="text" id="tel_no" name="tel_no" placeholder="Enter your tel no" />
+                  <input value="{{ old('tel_no') }}" class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" type="text" id="tel_no" name="tel_no" placeholder="Enter your tel no. (+244) 987 654 321" />
                   @if($errors->has('tel_no'))
                     <p class="mt-2 text-sm text-red-500">{{ $errors->first('tel_no') }}</p>
                     @endif
@@ -81,9 +81,15 @@
                 <div class="space-y-1">
                   <label for="password" class="font-medium">{{ __('Password') }}</label>
                   <input value="{{ old('password') }}" class="block border placeholder-gray-400 px-5 py-3 leading-6 w-full rounded border-gray-200 focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" type="password" id="password" name="password" placeholder="Choose a strong password" />
+
                   @if($errors->has('password'))
                     <p class="mt-2 text-sm text-red-500">{{ $errors->first('password') }}</p>
-                    @endif
+                    @else
+                    <p class="mt-2 text-sm">- Must be at least 8 characters long</p>
+                    <p class="mt-2 text-sm">- Must include at least 1 symbol</p>
+                    <p class="mt-2 text-sm">- Must include at least 1 uppercase character</p>
+                    <p class="mt-2 text-sm">- Must include at least 1 number</p>
+                  @endif
                 </div>
                 <div class="space-y-1">
                   <label for="password_confirmation" class="font-medium">{{ __('Confirm Password') }}</label>
@@ -112,10 +118,13 @@
                 </div>
 
                 <div class="space-y-1">
-                  <label for="avatar" class="font-medium">{{ __('Avatar') }}</label>
+                  <label for="avatar" class="font-medium">{{ __('Photo') }}</label>
                   <input id="avatar" name="avatar" type="file" class="" />
                   @if($errors->has('avatar'))
                     <p class="mt-2 text-sm text-red-500">{{ $errors->first('avatar') }}</p>
+                    @else
+                    <p class="mt-2 text-sm">- Must be an image file</p>
+                    <p class="mt-2 text-sm">- Must be less than 2MB in size</p>
                     @endif
                 </div>
                 
