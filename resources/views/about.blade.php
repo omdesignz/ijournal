@@ -79,7 +79,7 @@
               <p class="ml-16 text-lg leading-6 font-medium text-gray-900"></p>
             </dt>
             <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
-            The Infinity Journal publishes high-quality original articles, short communications, case studies and hypotheses on the fundamentals, applications and processes in Engineering, Technology, Geosciences and Social Science, as well as conference proceedings and papers reporting on basic and applied research and innovation in the aforementioned fields. Review articles reporting relevant discussions and conclusions of published papers will also be considered for publication. 
+            The Infinity Journal publishes high-quality original articles, short communications, case studies and hypotheses on the fundamentals, applications and processes in Engineering, Technology, Geosciences, Social Science and Health and Medicine, as well as conference proceedings and papers reporting on basic and applied research and innovation in the aforementioned fields. Review articles reporting relevant discussions and conclusions of published papers will also be considered for publication.  
             </dd>
           </div>
 
@@ -176,6 +176,21 @@
               </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
               Social sciences is defined in the classical sense, which is in the social sciences and humanities. The research that is published may take a theoretical or speculative model as well as statistical and/or mathematical. Contributions are welcome from all fields which have relevant and insightful comments to make about the social sciences. 
+              </dd>
+            </div>
+
+            <div class="relative">
+              <dt>
+                <div class="absolute flex items-center justify-center h-12 w-12 rounded-full bg-isptec text-white">
+                  <!-- Heroicon name: outline/mail -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                </div>
+                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Health and Medicine</p>
+              </dt>
+              <dd class="mt-2 ml-16 text-base text-gray-500 text-justify">
+              Health and Medicine covers all areas of medicine including health studies and nursing research, continuing medical education, tropical diseases of global significance, tropical medicine and public health research as well as clinical, epidemiological, laboratory and policy research. Contributions are welcome from all fields which have relevant and insightful comments to make about the field of Health and Medicine. 
               </dd>
             </div>
 
