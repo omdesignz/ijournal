@@ -9,7 +9,7 @@ use Illuminate\Queue\SerializesModels;
 use App\Models\User;
 use App\Models\Article;
 
-class ReviewEmail extends Mailable
+class ReviewEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 

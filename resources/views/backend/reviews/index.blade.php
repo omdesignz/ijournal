@@ -9,7 +9,7 @@
   </div>
   <div class="mt-4 flex md:mt-0 md:ml-4">
     <a href="/submissions/create" class="inline-flex items-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-isptec focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-isptec">
-      Submit Review
+      Submit New Article
     </a>
   </div>
 </div>
