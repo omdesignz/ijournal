@@ -76,6 +76,11 @@ class User extends Authenticatable implements HasMedia
         return $this->getFirstMediaURL('avatar') ?? '';
     }
 
+    public function getIsAdminAttribute()
+    {
+        return $this->roles()->whereName('admin')->count() > 0 ? true : false;
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('avatar')->singleFile();

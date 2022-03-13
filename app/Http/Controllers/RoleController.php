@@ -15,6 +15,10 @@ class RoleController extends Controller
      */
     public function index()
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $roles = Role::paginate(10);
 
         return view('backend.roles.index', compact('roles'));
@@ -27,6 +31,10 @@ class RoleController extends Controller
      */
     public function create()
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         return view('backend.roles.create');
     }
 
@@ -38,6 +46,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $request->validate([
             'name' => 'required|unique:roles,name',
             'label' => 'required',
@@ -59,6 +71,10 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $role = Role::findOrFail($id);
 
         return view('backend.roles.show', compact('role'));
@@ -72,6 +88,10 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $role = Role::findOrFail($id);
 
         return view('backend.roles.edit', compact('role'));
@@ -86,6 +106,10 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $request->validate([
             'name' => 'required|unique:roles,name,' . $id,
             'label' => 'required',
@@ -107,6 +131,12 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
+        Role::findOrFail($id)->delete();
+
+        return redirect('/roles');
     }
 }

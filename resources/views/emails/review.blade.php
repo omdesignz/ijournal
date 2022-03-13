@@ -4,8 +4,8 @@
 You've kindly been selected to review the following article:
 ## {{ strtoupper($event->article->title) }}
 
-@component('mail::button', ['url' => config('app.url') . '/dashboard'])
-Go to Dashboard
+@component('mail::button', ['url' => config('app.url') . '/reviews'])
+Go to Reviews
 @endcomponent
 
 Thanks,<br>

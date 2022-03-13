@@ -54,7 +54,13 @@ Route::get('/dashboard', function () {
 Route::get('/submissions', [ArticleController::class, 'index'])->middleware(['auth'])->name('submissions.index');
 Route::get('/submissions/create', [ArticleController::class, 'create'])->middleware(['auth'])->name('submissions.create');
 Route::get('/submissions/{id}', [ArticleController::class, 'show'])->middleware(['auth'])->name('submissions.show');
+Route::get('/submissions/{id}/edit', [ArticleController::class, 'edit'])->middleware(['auth'])->name('submissions.edit');
+Route::get('/submissions/{id}/publish', [ArticleController::class, 'publishView'])->middleware(['auth'])->name('submissions.publishView');
 Route::post('/submissions', [ArticleController::class, 'store'])->middleware(['auth'])->name('submissions.store');
+Route::put('/submissions/{id}', [ArticleController::class, 'update'])->middleware(['auth'])->name('submissions.update');
+Route::put('/submissions/{id}/publish', [ArticleController::class, 'publish'])->middleware(['auth'])->name('submissions.publish');
+Route::get('/submissions/{id}/unpublish', [ArticleController::class, 'unPublish'])->middleware(['auth'])->name('submissions.unpublish');
+
 
 Route::get('/announcements', [AnnouncementController::class, 'index'])->middleware(['auth'])->name('announcements.index');
 Route::get('/announcements/create', [AnnouncementController::class, 'create'])->middleware(['auth'])->name('announcements.create');

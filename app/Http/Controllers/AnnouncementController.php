@@ -28,6 +28,10 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         return view('backend.announcements.create');
     }
 
@@ -39,6 +43,10 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -82,6 +90,10 @@ class AnnouncementController extends Controller
      */
     public function edit($id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $announcement = Announcement::with('user')->findOrFail($id);
 
         return view('backend.announcements.edit', compact('announcement'));
@@ -96,6 +108,10 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -128,6 +144,12 @@ class AnnouncementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
+        Announcement::findOrFail($id)->delete();
+
+        return redirect('/announcements');
     }
 }

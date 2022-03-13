@@ -93,9 +93,21 @@
                         View Article
                       </a>
 
+                      <a href="/submissions/{{ $article->id }}/edit" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
+                        Modify Article
+                      </a>
+                      @if(!$article->status)
+                      <a href="/submissions/{{ $article->id }}/publish" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
+                        Publish Article
+                      </a>
                       <a href="/reviews/create?article_id={{ $article->id }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
                         Assign Reviewers
                       </a>
+                      @else
+                      <a href="/submissions/{{ $article->id }}/unpublish" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
+                        Unpublish Article
+                      </a>
+                      @endif
 
                     </div>
                   </div>

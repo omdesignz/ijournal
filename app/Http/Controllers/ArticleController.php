@@ -17,7 +17,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('user', 'journal')->paginate(10);
+
+        $articles = auth()->user()->isAdmin ? Article::with('user', 'journal')->paginate(10) : Article::with('user', 'journal')->where('user_id', auth()->id())->paginate(10);
 
         return view('backend.submissions.index', compact('articles'));
     }
@@ -118,7 +119,67 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::withCount(['user', 'journal', 'reviews'])->findOrFail($id);
+
+        if (! auth()->user()->isAdmin || auth()->id() != $article->user_id) {
+            abort(403);
+        }
+
+        return view('backend.submissions.edit', compact('article'));
+    }
+
+    
+    public function publishView($id)
+    {
+        $article = Article::withCount(['user', 'journal', 'reviews'])->findOrFail($id);
+
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
+        return view('backend.submissions.publish', compact('article'));
+    }
+
+    // Add finalized paper and mark as published
+
+    public function publish(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'final_paper' => 'required|mimes:pdf|max:5000',
+        ]);
+
+        $article = Article::findOrFail($id);
+
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
+        $article->update([
+            'status' => true,
+            'published_at' => now()->format('Y-m-d'),
+        ]);
+
+        if(isset($request->final_paper)){
+            $article->addMediaFromRequest('final_paper')->toMediaCollection('final_paper');
+        }
+
+        return redirect('/submissions');
+    }
+
+    public function unPublish($id)
+    {
+        $article = Article::findOrFail($id);
+
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
+        $article->update([
+            'status' => false,
+            'published_at' => null,
+        ]);
+
+        return redirect('/submissions');
     }
 
     /**
@@ -130,7 +191,51 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'abstract' => 'required',
+            'references' => 'required',
+            'keywords' => 'required',
+            'authors' => 'required',
+            'full_paper' => 'nullable|mimes:pdf|max:5000',
+            'filtered_paper' => 'nullable|mimes:pdf|max:5000',
+            'declaration' => 'nullable|mimes:pdf|max:5000',
+            'agree_terms' => 'required',
+            'agree_privacy_policy' => 'required',
+        ]);
+
+        $document = Article::findOrFail($id);
+
+        if (! auth()->user()->isAdmin || auth()->id() != $document->user_id) {
+            abort(403);
+        }
+
+        $document->update([
+            'title' => $request->title,
+            'abstract' => $request->abstract,
+            'references' => $request->references,
+            'keywords' => $request->keywords,
+            'authors' => $request->authors,
+            'agree_terms' => $request->agree_terms,
+            'agree_privacy_policy' => $request->agree_privacy_policy,
+            'user_id' => auth()->user()->id,
+            'journal_id' => 1,
+        ]);
+
+        // Add Possible Attachments
+        if($request->full_paper){
+            $document->addMediaFromRequest('full_paper')->toMediaCollection('full_paper');
+        }
+
+        if(isset($request->filtered_paper)){
+            $document->addMediaFromRequest('filtered_paper')->toMediaCollection('filtered_paper');
+        }
+
+        if(isset($request->declaration)){
+            $document->addMediaFromRequest('declaration')->toMediaCollection('declaration');
+        }
+
+        return redirect('/submissions');
     }
 
     /**
@@ -141,6 +246,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::findOrFail($id)->delete();
+
+        return redirect('/submissions');
     }
 }

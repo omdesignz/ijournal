@@ -280,6 +280,12 @@
                   </a>
                 </li>
 
+                <li>
+                  <a href="/terms-conditions" class="text-base text-gray-300 hover:text-isptec">
+                    Terms & Conditions
+                  </a>
+                </li>
+
               </ul>
             </div>
           </div>

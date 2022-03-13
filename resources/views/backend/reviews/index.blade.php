@@ -4,7 +4,7 @@
 <div class="md:flex md:items-center md:justify-between">
   <div class="flex-1 min-w-0">
     <h2 class="text-2xl font-bold leading-7 text-black sm:text-3xl sm:truncate">
-      Submissions
+      Reviews
     </h2>
   </div>
   <div class="mt-4 flex md:mt-0 md:ml-4">
@@ -92,7 +92,7 @@
                       <a href="/reviews/{{ $review->id }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
                         View Review
                       </a>
-
+                      @if(!$review->status)
                       <a href="/reviews/{{ $review->id }}/edit" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
                         Contribute
                       </a>
@@ -101,6 +101,7 @@
                       <a href="/reviews/{{ $review->id }}/markAsDone" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="option-menu-item-1">
                         Mark as Done
                       </a>
+                      @endif
                       @endif
 
                     </div>

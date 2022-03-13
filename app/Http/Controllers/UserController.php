@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('roles')->paginate(10);
+        $users = auth()->user()->isAdmin ? User::with('roles')->paginate(10) : User::with('roles')->whereId(auth()->id())->paginate(10);
 
         return view('backend.users.index', compact('users'));
     }
@@ -34,6 +34,10 @@ class UserController extends Controller
      */
     public function create()
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $roles = Role::all();
 
         return view('backend.users.create', compact('roles'));
@@ -47,6 +51,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+
         $request->validate([
             'username' => ['required', 'string', 'max:255', 'unique:users,username'],
             'first_name' => ['required', 'string', 'max:255'],
@@ -101,7 +109,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::with('roles')->findOrFail($id);
+        $user = auth()->user()->isAdmin ? User::with('roles')->findOrFail($id) : User::with('roles')->findOrFail($id);
 
         return view('backend.users.show', compact('user'));
     }
@@ -189,6 +197,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        if (! auth()->user()->isAdmin) {
+            abort(403);
+        }
+        
         $user = User::findOrFail($id);
 
          if($user->delete()){
