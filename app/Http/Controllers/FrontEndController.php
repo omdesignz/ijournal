@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SubmitedContactForm;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Announcement;
@@ -37,6 +38,31 @@ class FrontEndController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function postContact(Request $request)
+    {
+        $validated = $request->validate([
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'message' => 'required|string|min:10|max:255',
+        ]);
+
+        // dd($validated);
+
+        event(new SubmitedContactForm(
+            $validated['first_name'],
+            $validated['last_name'],
+            $validated['email'],
+            $validated['subject'],
+            $validated['message']
+        ));
+
+        return redirect()->back()->with([
+            'message' => 'Your message was successfully sent! You should receive an email notification as soon as it reaches our servers.'
+        ]);
     }
 
     public function about()

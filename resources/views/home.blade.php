@@ -61,7 +61,7 @@
                     <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
                     <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
                     <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                        <img class="object-cover lg:h-full lg:w-full" src="/infinity_cover.png" alt="">
+                        <img class="object-cover lg:h-full lg:w-full" src="/Infinity_cover.png" alt="">
                     </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                     <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
                     <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
                     <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                        <img class="object-cover lg:h-full lg:w-full" src="/infinity_dark.png" alt="">
+                        <img class="object-cover lg:h-full lg:w-full" src="/Infinity_dark.png" alt="">
                     </div>
                     </div>
                 </div>

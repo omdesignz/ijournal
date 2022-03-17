@@ -51,9 +51,9 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'tel_no' => $request->tel_no,
             'password' => Hash::make($request->password),
-            'agree_terms' => $request->agree_terms,
-            'agree_notification' => $request->agree_notification,
-            'agree_contact_review' => $request->agree_contact_review,
+            'agree_terms' => $request->agree_terms ?? 0,
+            'agree_notification' => $request->agree_notification ?? 0,
+            'agree_contact_review' => $request->agree_contact_review ?? 0,
             'review_interests' => $request->review_interests,
 
         ]);

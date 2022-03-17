@@ -10,7 +10,7 @@
         Recent articles
       </h2>
       <p class="mt-3 text-xl text-gray-500 sm:mt-4">
-        Here are some articles that might get your creative juices flowing. Have a read!
+        First publication of Infinity Journal is scheduled to be published soon.  Please register to be notified.
       </p>
     </div>
     <div class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">

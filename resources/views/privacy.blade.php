@@ -61,55 +61,16 @@
       <div class="relative md:bg-white md:p-6">
         <div class="lg:grid lg:grid-cols-2 lg:gap-6">
           <div class="prose prose-indigo prose-lg text-gray-500 lg:max-w-none">
-            <p class="text-justify">O presente termo de uso e política de privacidade visa registar a manifestação livre, informada e inequívoca pela qual o Titular dos dados concorda com o tratamento de seus dados pessoais para finalidade específica, em conformidade com a Lei n.º 22/11 de 17 de Junho de 2011 – Lei da Proteção de Dados Pessoais (LPDP).</p>
+            <p class="text-justify">The Infinity Journal will only collect information from registered users who have agreed to the terms of information use upon registration. The data collected from registered users falls within the scope of the standard functioning of peer -reviewed journals. It includes information that makes communication possible during the editorial process; it enables collecting aggregated data on submissions and publications, as well as tracking geopolitical and social elements of scholarly communication. The IJournal´s editorial team uses this data to guide its work in publishing and improving access to this journal. Data that will assist in developing this publishing platform may be shared with its developer IJournal Development Team  in an anonymous and aggregated form, with appropriate exceptions such as article metrics.</p>
             <br>
-            <p class="text-justify">Ao manifestar sua aceitação por meio da aposição de assinatura ao presente termo, o Titular consente e concorda que o Instituto Superior Politécnico de Tecnologias e Ciências - ISPTEC, com o NIF: 5420001101, com sede na Av. Luanda Sul, Rua Lateral Via S10 – Talatona – Luanda Sul – República de Angola, telefone: +244226690323/226690324, e-mail geral@isptec.co.ao, tome decisões referentes ao tratamento de seus dados pessoais, bem como operações que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, comunicação, transferência, difusão ou extração no âmbito da sua unidade de negocio.</p>
+            <p class="text-justify">The data will not be sold by this journal or IJournal Development nor will it be used for purposes other than those stated here.</p>
             <br>
-            <p class="text-justify font-semibold">Objecto</p>
-            <p class="text-justify">O presente termo de uso e política de privacidade define à perspetiva geral da forma como o ISPTEC trata os dados pessoais de que dispõe, de acordo com o disposto na Lei n.º 22/11 de 17 de Junho, Lei da Proteção de Dados Pessoais (LPDP) e restante legislação aplicável em matéria de privacidade e proteção de dados.</p>
-            <br>
-            <p class="text-justify">O ISPTEC realiza o tratamento dos dados pessoais dos usuários do website e do portal da instituição.</p>
-            <br>
-            <p class="text-justify font-semibold">Âmbito e aplicação</p>
-            <p class="text-justify">O ISPTEC está empenhado em proteger a privacidade e os dados pessoais dos seus visitantes e utilizadores do website e do seu portal interno e, neste contexto, elaborou a presente termo de uso e política de privacidade com a finalidade de demonstrar o seu compromisso e respeito para com as regras de privacidade e de proteção de dados pessoais.</p>
-            <br>
-            <p class="text-justify font-semibold">Definições</p>
-            <p class="text-justify">No presente termo de uso e política de privacidade para tratamento de dados pessoais, as palavras e expressões seguintes têm o significado que neste parágrafo se lhes atribui, salvo quando o contexto impuser diferente raciocínio, entende-se por:</p>
-            <br>
-            <p class="text-justify">a)	<b>«Consentimento»</b> é a livre vontade de permitir que um determinado acto seja praticado de formas a alcançar uma determinada finalidade;</p>
-            <br>
-            <p class="text-justify">b)	<b>«Dados Pessoais»</b> entende-se por quaisquer informações relacionadas com o Titular dos Dados e que o permitam identificar;</p>
-            <br>
-            <p class="text-justify">c)	<b>«Partes»</b> significa a Contratante e a Contratada em conjunto e Parte significa qualquer delas individualmente;</p>
-            <br>
-            <p class="text-justify">d)	<b>«Titular dos Dados»</b> qualquer pessoa singular identificada ou identificável a quem os Dados Pessoais se encontram associados. A pessoa singular pode ser identificável ou identificada, direta ou indiretamente, nomeadamente, através do nome, número de identificação civil ou fiscal, dados de localização, identificadores online (tais como endereços de IP e logs). A identificação também pode ser feita mediante fatores de identidade física, fisiológica, genética, mental, económica, cultural ou social. O utilizador do website, aplicações e plataformas digitais considera-se como Titular dos Dados em relação ao ISPTEC.</p>
-            <br>
-            <p class="text-justify">e)	<b>«Tratamento»</b>  qualquer operação efectuada no âmbito dos Dados Pessoais, através de meios automáticos ou não, tal como a recolha, gravação, organização, estruturação, armazenamento, adaptação ou alteração, recuperação, consulta, utilização, divulgação por transmissão, disseminação ou, alternativamente, disponibilização, harmonização ou associação, restrição, eliminação ou destruição. Também é considerado Tratamento de Dados Pessoais qualquer outra operação prevista nos termos da LPDP.</p>
-            <br>
+            
+            <p class="text-justify">The authors published in this journal are responsible for the human subject data that figures in the research reported here. Those involved in editing this journal seek to be compliant with industry standards for data privacy, including the European Union’s General Data Protection Regulation <a class="text-isptec" href="https://gdpr-info.eu/" target="_blank">(GDPR)</a> provision for <a class="text-isptec" href="https://gdpr-info.eu/chapter-3/" target="_blank">“ data subject rights ”</a> that include (a) breach notification; (b) right of access; (c) the right to be forgotten; (d) data portability; and (e) privacy by design. The GDPR also allows for the recognition of <a class="text-isptec" href="https://gdpr-info.eu/art-5-gdpr/" target="_blank">“the public interest in the availability of the data,”</a> which has a particular saliency for those involved in maintaining, with the greatest integrity possible, the public record of scholarly publishing.</p>
+            
           </div>
           <div class="mt-6 prose prose-indigo prose-lg text-gray-500 lg:mt-0">
-          <p class="text-justify font-semibold">Segurança dos dados</p>
-           <br>
-           <p class="text-justify">O ISPTEC responsabiliza-se pela manutenção de medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou qualquer forma de tratamento inadequado.</p>
-           <br>
-           <p class="text-justify">Em conformidade ao art. 30º e 31º da Lei n.º 22/11 de 17 de Junho de 2011 – Lei da Proteção de Dados Pessoais (LPDP), o ISPTEC comunicará ao titular e à Agência de Protecção de Dados (APD) sempre que ocorrer incidente de segurança que possam acarretar riscos ou dano relevante ao titular. </p>
-           <br>
-           <p class="text-justify">Os nossos sistemas de proteção atendem a todos os requisitos trazidos na Lei n.º 22/11 de 17 de Junho de 2011, respeitando as condutas de boa prática, as medidas de segurança técnicas e administrativas para proteção dos dados coletados.</p>
-           <br>
-           <p class="text-justify">Temos muito cuidado e preocupação em proporcionar segurança aos dados coletados dos nossos usuários, por esse motivo utilizamos ferramentas específicas para garantir a privacidade dos dados que tratamos.</p>
-           <br>
-           <p class="text-justify">As técnicas utilizadas para assegurar a segurança dos dados coletados por nosso website e portal online são todas adequadas e aptas a gerar a proteção integral dos dados dos usuários de qualquer possível situação onde possa ser obtido os dados, compartilhados, publicados, destruídos e alterados sem autorização e de maneira irregular.</p>
-           <br>
-           <p class="text-justify">Adotamos medidas específicas para cada espécie de dados sendo o modo de segurança direcionado especificadamente para o dado que foi coletado, de acordo com o contexto da sua coleta e sua finalidade.</p>
-           <br>
-           <p class="text-justify">Utilizamos proteção em nossos computadores por meio da criptografia de dados e/ ou firewall.</p>
-           <br>
-           <p class="text-justify">O acesso físico aos nossos arquivos só acontece quando é necessário que algum de nossos funcionários tenham acesso a eles para desempenhar sua função profissional.</p>
-           <br>
-           <p class="text-justify">É importante informar que tomamos todos os cuidados para proteger os dados de nossos usuários, mas ainda assim, há algumas situações que acontecem onde há o vazamento de dados. O nosso website não é responsável por qualquer incidente com dados pessoais que aconteça por situação em que não temos o controle, como a culpa exclusiva do usuário, ou ataques de hackers.</p>
-           <br>
-           <p class="text-justify">Qualquer incidente que cause danos aos dados pessoais dos usuários, informaremos as autoridades responsáveis, conforme a Lei n.º 22/11 de 17 de Junho de 2011 – Lei da Proteção de Dados Pessoais (LPDP).</p>
-           <br>
+          <p class="text-justify font-semibold"></p>
 
           </div>
         </div>

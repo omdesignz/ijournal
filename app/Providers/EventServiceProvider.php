@@ -3,10 +3,13 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
+use App\Events\SubmitedContactForm;
 use App\Events\Illuminate\Auth\Events\SelectedToReviewArticle;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use App\Listeners\Illuminate\Auth\Listeners\SendWelcomeNotification;
 use App\Listeners\Illuminate\Auth\Listeners\SendReviewNotification;
+use App\Listeners\SendContactFormNotificationToSender;
+use App\Listeners\SendContactFormToIJournal;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
@@ -24,6 +27,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         SelectedToReviewArticle::class => [
             SendReviewNotification::class,
+        ],
+        SubmitedContactForm::class => [
+            SendContactFormToIJournal::class,
+            SendContactFormNotificationToSender::class,
         ],
     ];
 

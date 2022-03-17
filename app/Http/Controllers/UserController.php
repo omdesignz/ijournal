@@ -78,8 +78,8 @@ class UserController extends Controller
                 'active' => $request->active,
                 'agree_terms' => $request->agree_terms,
                 'agree_notification' => $request->agree_notification,
-                'agree_contact_review' => $request->agree_contact_review,
-                'review_interests' => $request->review_interests,
+                'agree_contact_review' => $request->agree_contact_review ?? false,
+                'review_interests' => $request->review_interests ?? null,
             ]);
             // Assign Roles To Created User
             $user->AssignRole($request->roles);
@@ -167,8 +167,8 @@ class UserController extends Controller
                 'active' => $request->active,
                 'agree_terms' => $request->agree_terms,
                 'agree_notification' => $request->agree_notification,
-                'agree_contact_review' => $request->agree_contact_review,
-                'review_interests' => $request->review_interests,
+                'agree_contact_review' => $request->agree_contact_review ?? false,
+                'review_interests' => $request->review_interests ?? null,
             ]);
 
             ($user->roles->count() ? $user->roles()->wherePivot('user_id', $id)->detach() : '');

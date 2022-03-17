@@ -23,6 +23,7 @@ use App\Http\Controllers\RoleController;
 
 Route::get('/home', [FrontEndController::class, 'index']);
 Route::get('/contact', [FrontEndController::class, 'contact']);
+Route::post('/contact', [FrontEndController::class, 'postContact']);
 Route::get('/about', [FrontEndController::class, 'about']);
 // Route::get('/submissions', [FrontEndController::class, 'submissions']);
 Route::get('/policy', [FrontEndController::class, 'policy']);

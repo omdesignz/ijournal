@@ -24,7 +24,9 @@
               <!-- Header -->
               <div>
                 <h1 class="text-4xl font-bold inline-flex items-center mb-1 space-x-3">
-                <img class="h-8 w-auto sm:h-10" src="/infinity_bg_light.svg" alt="">
+                  <a href="/">
+                    <img class="h-8 w-auto sm:h-10" src="/infinity_bg_light.svg" alt="">
+                  </a>
                   <span></span>
                 </h1>
                 <p class="text-gray-500">
@@ -100,7 +102,7 @@
                 </div>
                 <div class="flex items-center">
                   <input name="agree_terms" value="1" type="checkbox" class="border border-gray-300 rounded-full h-4 w-4 text-isptec focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" {{ old('agree_terms') == 1 ? 'checked' : '' }} />
-                  <span class="ml-2"> I accept <a href="#" class="font-medium text-isptec hover:text-gray-700">terms &amp; conditions</a></span>
+                  <span class="ml-2"> I accept <a href="/terms-conditions" class="font-medium text-isptec hover:text-gray-700">terms &amp; conditions</a></span>
                 </div>
                 <div class="flex items-center">
                   <input name="agree_notification" value="1" type="checkbox" class="border border-gray-300 rounded-full h-4 w-4 text-isptec focus:border-isptec focus:ring focus:ring-isptec focus:ring-opacity-50" {{ old('agree_notification') == 1 ? 'checked' : '' }} />
@@ -118,7 +120,7 @@
                 </div>
 
                 <div class="space-y-1">
-                  <label for="avatar" class="font-medium">{{ __('Photo') }}</label>
+                  <label for="avatar" class="font-medium">Photo</label>
                   <input id="avatar" name="avatar" type="file" class="" />
                   @if($errors->has('avatar'))
                     <p class="mt-2 text-sm text-red-500">{{ $errors->first('avatar') }}</p>
